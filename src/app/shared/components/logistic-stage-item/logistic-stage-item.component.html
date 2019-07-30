@@ -1,0 +1,25 @@
+<p class="customer-name">
+  {{ stage?.data?.customer?.name | uppercase }}
+</p>
+<p class="customer-address">{{ stage?.data?.address }}</p>
+<div class="stage-grouped-info">
+  <div class="icon-left-text">
+    <ion-icon name="time"></ion-icon>
+    <span>{{ stageDueDate | date : 'hh:mm a' }}</span>
+  </div>
+  <div class="icon-left-text">
+    <ion-icon
+      *ngIf="stage?.type === StageType.Delivery"
+      name="log-in">
+    </ion-icon>
+    <ion-icon
+      *ngIf="stage?.type === StageType.PickUp"
+      name="log-out">
+    </ion-icon>
+    <span>{{ stage?.type | uppercase }}</span>
+  </div>
+  <div class="icon-right-text">
+    <span>{{ '6' }}</span>
+    <ion-icon name="cart"></ion-icon>
+  </div>
+</div>

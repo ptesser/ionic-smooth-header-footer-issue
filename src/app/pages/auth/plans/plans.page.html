@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button></ion-back-button>
+    <ion-title>{{ 'Plans' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>{{ 'All plans' }}</ion-list-header>
+    <ion-item
+      detail
+      *ngFor="let plan of plans$ | async"
+      [routerLink]="['/stages']"
+      [queryParams]="{ date: plan.date.toISOString().split('T')[0] }">
+      <ion-label>
+        <p>{{ plan.date | date }}</p>
+        <p>
+          {{ 'There are ' + plan.count + ' stages for this plan' }}
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

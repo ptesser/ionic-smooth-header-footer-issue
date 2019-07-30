@@ -1,0 +1,31 @@
+@import '../../../../theme/variables.scss';
+@import '../../../../theme/mixins.scss';
+
+.customer-name {
+  color: var(--ion-text-color);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.customer-address {
+  color: var(--ion-text-color);
+  font-size: 1.1rem;
+}
+
+.stage-grouped-info {
+  display: flex;
+  font-size: 1.1rem;
+  margin-top: calc(var(--spacer) * 2);
+
+  > div {
+    margin-right: calc(var(--spacer) * 4);
+  }
+
+  > div:last-child {
+    margin-left: auto;
+  }
+
+  @include respond-above(sm) {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,12 @@
+@mixin respond-above($breakpoint) {
+
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+    $width: map-get($grid-breakpoints, $breakpoint);
+  
+    @media screen and (min-width: $width) {
+      @content;
+    }
+  } @else {
+      @warn 'Invalid breakpoint key';
+  }
+}

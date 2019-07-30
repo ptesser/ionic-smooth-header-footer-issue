@@ -1,0 +1,24 @@
+.icon-text {
+  align-items: center;
+  display: flex;
+
+  ion-icon {
+    color: gray;
+  }
+}
+
+.icon-left-text {
+  @extend .icon-text;
+
+  ion-icon {
+    margin-right: calc(var(--spacer) * 2);
+  }
+}
+
+.icon-right-text {
+  @extend .icon-text;
+
+  ion-icon {
+    margin-left: calc(var(--spacer) * 2);
+  }
+}

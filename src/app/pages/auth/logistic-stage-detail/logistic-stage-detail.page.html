@@ -1,0 +1,31 @@
+<app-header>
+  <app-logistic-stage-item [stage]="stage"></app-logistic-stage-item>
+</app-header>
+
+<ion-content>
+  <div
+    *ngIf="stage.carts.length === 0"
+    class="no-cart">
+    <ion-icon name="cart"></ion-icon>
+    <p>
+      {{ 'Non ci sono ancora carrelli per questo ritiro' }}
+    </p>
+  </div>
+  <div *ngIf="stage.carts.length > 0">
+    <!-- TODO: Insert list of cart scan -->
+  </div>
+
+  <div
+    *ngIf="stage.type === StageType.Delivery || (stage.type === StageType.PickUp && stage.carts.length === 0)"
+    class="map-indications">
+    <p>{{ 'Non sei ancora in viaggio?' }}</p>
+    <ion-button color="primary">
+      {{ 'Ottieni indicazioni stradali' | uppercase }}
+    </ion-button>
+  </div>
+</ion-content>
+
+<ion-footer class="logistic-stage-actions">
+  <ion-button class="btn-scan">{{ 'Scan Carrello' | uppercase }}</ion-button>
+  <ion-button class="btn-complete">{{ 'Termina' | uppercase }}</ion-button>
+</ion-footer>
