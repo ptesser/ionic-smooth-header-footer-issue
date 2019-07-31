@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', loadChildren: './login/login.module#LoginPageModule' },
+  // { path: '', loadChildren: './login/login.module#LoginPageModule' },
   { path: '', loadChildren: './auth/auth.module#AuthPageModule' },
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: 'plans' },
 ];
 
 @NgModule({

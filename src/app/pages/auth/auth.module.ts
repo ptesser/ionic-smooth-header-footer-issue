@@ -13,7 +13,7 @@ const routes: Routes = [
     component: AuthPage,
     children: [
       {
-        path: 'plans',
+        path: '',
         loadChildren: './plans/plans.module#PlansPageModule',
       },
       {
